@@ -1,11 +1,10 @@
-// Import the functions you need from the SDKs you need
-var firebase = require('firebase-admin');
+var admin = require("firebase-admin");
+
 var serviceAccount = require("../dummy.json");
 
-// Initialize Firebase
-firebase.initializeApp({
-    credential: firebase.credential.cert(serviceAccount),
-    databaseURL: "https://dummy-90613-default-rtdb.asia-southeast1.firebasedatabase.app/"
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: "https://projectakhir-f0566-default-rtdb.firebaseio.com"
 });
 
-module.exports = firebase;
+module.exports = admin
