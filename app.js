@@ -112,7 +112,7 @@ client.on('message', (topic, payload) => {
     var ph = obj.ph
     var suhu = obj.suhu
     var id_kolam = obj.id_kolam
-    var today = new Date();
+    var today = new Date().toLocaleString("en-US", {timeZone: "Asia/Jakarta"});
     var date = (today.getMonth() + 1) + '-' + today.getDate() + '-' + today.getFullYear();
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
