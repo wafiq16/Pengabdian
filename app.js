@@ -112,15 +112,17 @@ client.on('message', (topic, payload) => {
     var ph = obj.ph
     var suhu = obj.suhu
     var id_kolam = obj.id_kolam
-    var today = new Date().toLocaleString("en-US", {timeZone: "Asia/Jakarta"});
-    var date = (today.getMonth() + 1) + '-' + today.getDate() + '-' + today.getFullYear();
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var date = new Date().toLocaleDateString("en-US", {timeZone: "Asia/Jakarta"});
+    var time = new Date().toLocaleTimeString("en-US", {timeZone: "Asia/Jakarta"});
+    // console.log(today);
+    // var date = (today.getMonth() + 1) + '-' + today.getDate() + '-' + today.getFullYear();
+    // var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
     obj.date = date
     obj.time = time
 
     const start = Date.now()
-    console.log(time)
+    // console.log(time)
     db.ref("alat").push(obj, function(error) {
         if (error) {
             // The write failed...
