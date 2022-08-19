@@ -136,6 +136,12 @@ client.on('message', (topic, payload) => {
     console.log(`Time Taken to execute = ${(stop - start)/1000} seconds`);
 })
 
+var intervalId = setInterval(() => {
+    // alert("Interval reached every 5s")
+    var obj;
+    console.log("jalan");
+},
+500);
 // client.publish(topic, 'nodejs mqtt test', { qos: 0, retain: false }, (error) => {
 //     if (error) {
 //         console.error(error)

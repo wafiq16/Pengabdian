@@ -1,9 +1,10 @@
 import paho.mqtt.client as mqtt
 import base64
+import time
 
 MQTT_SERVER = "192.168.150.202"
 MQTT_SERVER = "broker.hivemq.com"
-MQTT_PATH = "/motor_monitoring/control"
+MQTT_PATH = "/Pengabdian/dataKolam"
 MQTT_PATH2 = "/esp32camSensor"
 MQTT_PATH3 = "/pengeringMonitor"
 
@@ -25,6 +26,9 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, msg):
     # more callbacks, etc
     # Create a file with write byte permission
+    from datetime import datetime
+    now = datetime.now()
+    print(now)
     print(msg.payload)
     # print(base64.b64decode(msg.payload))
     # f = open('2.jpg', "wb")
