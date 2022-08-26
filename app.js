@@ -139,7 +139,7 @@ client.on('message', (topic, payload) => {
 var intervalId = setInterval(() => {
     // alert("Interval reached every 5s")
     var obj;
-    console.log("jalan");
+    // console.log("jalan");
 },
 500);
 // client.publish(topic, 'nodejs mqtt test', { qos: 0, retain: false }, (error) => {
