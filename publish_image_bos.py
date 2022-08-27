@@ -11,9 +11,9 @@ filecontent = ""
 # byteArr = bytearray(filecontent)
 # byteArr = "haha"
 
-i = 1
+i = 9
 
-while i < 8:
+while i <= 10:
     id_alat = i  # random.randint(i, 8)
     id_tambak = 1  # random.randint(1, 1)
     message = {"sensor1": random.randint(20, 35), "sensor2": 10}
