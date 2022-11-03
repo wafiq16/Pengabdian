@@ -96,6 +96,9 @@ client.on('connect', () => {
     client.subscribe([topic], () => {
         console.log(`${program.protocol}: Subscribe to topic '${topic}'`)
     })
+    client.subscribe([topic2], () => {
+        console.log(`${program.protocol}: Subscribe to topic '${topic2}'`)
+    })
 })
 
 client.on('reconnect', (error) => {

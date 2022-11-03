@@ -21,14 +21,14 @@ while True:
               "ph": str(random.randint(0, 14)), "suhu": str(random.randint(20, 35)), "id_kolam": str(1), "do": "0.000"}
     data_out = json.dumps(string)
 
-    publish.single('/Pengabdian/dataKolam', data_out, qos=0,
+    publish.single('/Pengabdian/dataDummy', data_out, qos=0,
                    hostname='broker.hivemq.com')
 
     string = {"id_hardware": "P0" + str(id_alat) + "." + str(id_tambak), "salinitas": str(random.randint(1, 100)),
               "ph": str(random.randint(0, 14)), "suhu": str(random.randint(20, 35)), "id_kolam": str(2), "do": "0.000"}
     data_out = json.dumps(string)
 
-    publish.single('/Pengabdian/dataKolam', data_out, qos=0,
+    publish.single('/Pengabdian/dataDummy', data_out, qos=0,
                    hostname='broker.hivemq.com')
     i += 1
     print("sedang publish")
