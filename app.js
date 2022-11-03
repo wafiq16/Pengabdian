@@ -87,6 +87,7 @@ app.use(function(err, req, res, next) {
 
 
 const topic = '/Pengabdian/dataKolam'
+const topic2 = '/Pengabdian/dataDummy'
 
 const client = mqtt.connect(connectUrl, OPTIONS)
 
@@ -123,16 +124,31 @@ client.on('message', (topic, payload) => {
     obj.time = time
 
     const start = Date.now()
-    // console.log(time)
-    db.ref("alat").push(obj, function(error) {
-        if (error) {
-            // The write failed...
-            console.log("Failed with error: " + error)
-        } else {
-            // The write was successful...
-            console.log("success")
-        }
-    })
+
+    if (topic == topic2) {
+        // console.log(time)
+        db.ref("dummy").push(obj, function(error) {
+            if (error) {
+                // The write failed...
+                console.log("Failed with error: " + error)
+            } else {
+                // The write was successful...
+                console.log("success")
+            }
+        })
+    }
+    else{
+        // console.log(time)
+        db.ref("alat").push(obj, function(error) {
+            if (error) {
+                // The write failed...
+                console.log("Failed with error: " + error)
+            } else {
+                // The write was successful...
+                console.log("success")
+            }
+        })
+    }
     const stop = Date.now()
     console.log(`Time Taken to execute = ${(stop - start)/1000} seconds`);
 })
@@ -148,5 +164,7 @@ var intervalId = setInterval(() => {
 //         console.error(error)
 //     }
 // })
+
+// const client = mqtt.connect(connectUrl, OPTIONS)
 
 module.exports = app;

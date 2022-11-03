@@ -13,7 +13,7 @@ filecontent = ""
 
 i = 9
 
-while i <= 10:
+while True:
     id_alat = i  # random.randint(i, 8)
     id_tambak = 1  # random.randint(1, 1)
     message = {"sensor1": random.randint(20, 35), "sensor2": 10}
@@ -31,5 +31,6 @@ while i <= 10:
     publish.single('/Pengabdian/dataKolam', data_out, qos=0,
                    hostname='broker.hivemq.com')
     i += 1
+    print("sedang publish")
 # publish.single('/esp32camSensor', data_out, qos=0,
 #                hostname='192.168.117.202')
